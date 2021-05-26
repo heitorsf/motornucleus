@@ -1,7 +1,9 @@
 from netpyne import sim
 import numpy as np
-import matplotlib.pyplot as plt; plt.ion()
+import matplotlib.pyplot as plt
 import nerlabtools as ner
+
+#plt.ion()
 
 from mn_cfg import cfg
 from mn_netParams import netParams
