@@ -32,7 +32,7 @@ netParams.popParams['HH_pop'] = {
 # Artificial spike generators (NetStims)
 netParams.popParams['descDrive'] = {
         'cellType': 'artif_NetStim',
-        'numCells': 400,
+        'numCells': 5,
         'rate': 50,  # Hz
         'noise': 0.5,
         'yRange': [0,100]}
@@ -54,8 +54,8 @@ netParams.connParams['descDrive->motorNucleus'] = {     #label
         'postConds': {'pop': 'HH_pop'},
         #'sec': 'dend',              # postsyn section
         #'loc': 0.5,                 # postsyn section location
-        #'connFunc': 'fullConn',
-  		'probability': 0.3,
+        'connFunc': 'fullConn',
+  		#'probability': 1.,
         'weight': 0.01,      # synaptic weight (gmax for Exp2Syn)
         'delay': 5,        # transmission delay(ms) = 1 ms (1 synpase)
         'synMech': 'exc'}           # synaptic mechanism

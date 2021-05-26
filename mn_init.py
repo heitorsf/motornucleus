@@ -6,7 +6,7 @@ import nerlabtools as ner
 from mn_cfg import cfg
 from mn_netParams import netParams
 
-output = sim.create(netParams=netParams, simConfig=cfg, output=True)
+sim.create(netParams=netParams, simConfig=cfg, output=False)
 sim.simulate()
 sim.analyze()
 

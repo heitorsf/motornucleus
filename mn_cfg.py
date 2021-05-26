@@ -17,4 +17,4 @@ cfg.analysis['plot2Dnet'] = False #True  # Plot 2D net cells and connections
 cfg.analysis['plotConn'] = False #True
 
 # Variable parameters, used in netParams
-cfg.numCells = 120
+cfg.numCells = 50
