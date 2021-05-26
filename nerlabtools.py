@@ -728,7 +728,7 @@ def muscularForce(spkt, t, plotForce=False, newFigure=True, fitStyle='exponentia
 
 def plotForces(t,forces):
     """Plot force signal."""
-    plt.title("FDI Muscular Force")
+    plt.title("Muscular Force")
     plt.xlabel("Time [ms]")
     plt.ylabel("Muscular Force [N]")
     plt.plot(t,forces.sum(axis=0))
