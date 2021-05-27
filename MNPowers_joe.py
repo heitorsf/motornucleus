@@ -33,10 +33,10 @@ def range_assignment(sec, var, valrange, locrange=[0.0, 1.0], verbose=True):
 class FRMotoneuronNaHH(object):
     
     def __init__(self):
-        self.soma = h.Section()
-        self.iseg = h.Section()
-        self.axonhillock = h.Section()
-        self.dend = h.Section()
+        self.soma = h.Section(name='soma')
+        self.iseg = h.Section(name='iseg')
+        self.axonhillock = h.Section(name='axonhillock')
+        self.dend = h.Section(name='dend')
 
         self.connectSections()
         self.setPassiveMN()
