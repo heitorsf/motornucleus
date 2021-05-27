@@ -40,7 +40,7 @@ class FRMotoneuronNaHH(object):
 
         self.connectSections()
         self.setPassiveMN()
-        #self.setFRMotoneuronNaHH()
+        self.setFRMotoneuronNaHH()
         #self.setMediumTreshMN()
         
 
@@ -100,53 +100,79 @@ class FRMotoneuronNaHH(object):
 
 
 
-    # def setFRMotoneuronNaHH(self):
-    #     """Base code as in: FRMotoneuronNaHH.hoc."""
-    #     self.soma.insert('na3rp')
-    #     self.soma.insert('naps')
-    #     self.soma.insert('kdrRL')
-    #     self.soma.insert('mAHP')
-    #     self.soma.insert('gh')
-    #     self.soma.gMax_kdrRL=0.1
-    #     self.soma.gkcamax_mAHP=0.01
-    #     self.soma.gcamax_mAHP=1.5e-5
-    #     self.soma.eca=80
-    #     self.soma.theta_m_L_Ca=-40
-    #     self.soma.tau_m_L_Ca=60
+    def setFRMotoneuronNaHH(self):
+        """Base code as in: FRMotoneuronNaHH.hoc."""
+        self.soma.insert('na3rp')
+        self.soma.insert('naps')
+        self.soma.insert('kdrRL')
+        self.soma.gMax_kdrRL = 0.1
+        self.soma.insert('mAHP')
+        self.soma.gkcamax_mAHP = 0.01
+        self.soma.gcamax_mAHP = 1.5e-5
+        self.soma.insert('gh')
+        self.soma.eca = 80
+        self.soma.theta_m_L_Ca = -40
+        self.soma.tau_m_L_Ca = 60
         
-    #     self.axonhillock.insert('na3rp')
-    #     self.axonhillock.insert('naps')
-    #     self.axonhillock.insert('kdrRL')
-    #     self.axonhillock.gMax_kdrRL=0.15
+        self.axonhillock.insert('na3rp')
+        self.axonhillock.insert('naps')
+        self.axonhillock.insert('kdrRL')
+        self.axonhillock.gMax_kdrRL = 0.15
     
-    #     self.iseg.insert('na3rp')
-    #     self.iseg.insert('naps')
-    #     self.iseg.insert('kdrRL')
-    #     self.iseg.gMax_kdrRL=0.6
+        self.iseg.insert('na3rp')
+        self.iseg.insert('naps')
+        self.iseg.insert('kdrRL')
+        self.iseg.gMax_kdrRL = 0.6
 
-    #     self.dend.insert('gh')
-    #     self.dend.insert('na3rp')
-    #     self.dend.insert('naps')
-    #     self.dend.insert('kdrRL')
-    #     self.dend.insert('kca2')
-    #     self.dend.insert('L_Ca')
-    #     self.dend.insert('mAHP')
-    #     self.dend.gcamax_mAHP(0:0.1)=1.5e-5:1.5e-5
-    #     self.dend.gcamax_mAHP(0.1:1)=0:0
-    #     self.dend.gkcamax_mAHP(0:0.1)=0.004:0.004
-    #     self.dend.gkcamax_mAHP(0.1:1)=0:0
-    #     self.dend.gMax_kdrRL(0:1)=0.07:0
-    #     self.dend.g_kca2(0:0.3)=0:0
-    #     self.dend.g_kca2(0.3:0.6)=3.8e-4:3.8e-4
-    #     self.dend.g_kca2(0.6:1)=0:0
-    #     self.dend.gcabar_L_Ca (0:0.3)=0:0
-    #     self.dend.gcabar_L_Ca(0.3:0.6)=4e-4:4e-4
-    #     self.dend.gcabar_L_Ca (0.6:1)=0:0
-    #     self.dend.depth2_kca2=1000
-    #     self.dend.taur2_kca2=425
-    #     self.dend.depth1_kca2=0.1
-    #     self.dend.taur1_kca2=20
-    #     self.dend.eca=80
+        self.dend.insert('gh')
+        self.dend.insert('na3rp')
+        self.dend.insert('naps')
+        self.dend.insert('kdrRL')
+        self.dend.insert('kca2')
+        self.dend.insert('L_Ca')
+        self.dend.insert('mAHP')
+
+        self.dend.depth2_kca2 = 1000
+        self.dend.taur2_kca2 = 425
+        self.dend.depth1_kca2 = 0.1
+        self.dend.taur1_kca2 = 2
+        self.dend.eca = 80
+
+        #self.dend.gcamax_mAHP(0:0.1)=1.5e-5:1.5e-5
+        range_assignment(self.dend, var='gcamax_mAHP', valrange=[1.5e-5, 1.5e-5], locrange=[0.0, 0.1])
+
+        #self.dend.gcamax_mAHP(0.1:1)=0:0
+        range_assignment(self.dend, var='gcamax_mAHP', valrange=[0, 0], locrange=[0.1, 1.0])
+
+        #self.dend.gkcamax_mAHP(0:0.1)=0.004:0.004
+        range_assignment(self.dend, var='gkcamax_mAHP', valrange=[0.004, 0.004], locrange=[0.0, 0.1])
+
+        #self.dend.gkcamax_mAHP(0.1:1)=0:0
+        range_assignment(self.dend, var='gkcamax_mAHP', valrange=[0, 0], locrange=[0.1, 1.0])
+
+        #self.dend.gMax_kdrRL(0:1)=0.07:0
+        range_assignment(self.dend, var='gMax_kdrRL', valrange=[0.07, 0.0], locrange=[0.0, 1.0])
+
+        #self.dend.g_kca2(0:0.3)=0:0
+        range_assignment(self.dend, var='g_kca2', valrange=[0, 0], locrange=[0.0, 0.3])
+
+        #self.dend.g_kca2(0.3:0.6)=3.8e-4:3.8e-4
+        range_assignment(self.dend, var='g_kca2', valrange=[3.8e-4, 3.8e-4], locrange=[0.3, 0.6])
+
+        #self.dend.g_kca2(0.6:1)=0:0
+        range_assignment(self.dend, var='g_kca2', valrange=[0, 0], locrange=[0.6, 1.0])
+
+        #self.dend.gcabar_L_Ca(0:0.3)=0:0
+        range_assignment(self.dend, var='gcabar_L_Ca', valrange=[0, 0], locrange=[0.0, 0.3])
+
+        #self.dend.gcabar_L_Ca(0.3:0.6)=4e-4:4e-4
+        range_assignment(self.dend, var='gcabar_L_Ca', valrange=[4e-4, 4e-4], locrange=[0.3, 0.6])
+
+        #self.dend.gcabar_L_Ca(0.6:1)=0:0
+        range_assignment(self.dend, var='gcabar_L_Ca', valrange=[0, 0], locrange=[0.6, 1.0])
+
+    
+
 
     # def setMediumTreshMN(self):
     #     """As in: Medium_thresh_MN.hoc."""
