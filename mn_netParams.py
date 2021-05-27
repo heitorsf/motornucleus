@@ -9,7 +9,17 @@ netParams = specs.NetParams()
 ############################
 ## Cells: Specify cell types
 ############################
-netParams.cellParams['alphaMN'] = alphaMotorNeuron
+#netParams.defaultThreshold = 50.0
+netParams.cellParams['alphaMN_netpyne'] = alphaMotorNeuron
+
+netParams.importCellParams(
+        label='alphaMN_py',
+        conds={'cellType': 'alphaMN_py'},
+        fileName='MotorNeuron.py',
+        cellName='AlphaMotorNeuron',
+        importSynMechs=False)
+netParams.cellParams['alphaMN_py']['secs']['soma']['vinit'] = 0.0
+netParams.cellParams['alphaMN_py']['secs']['dend']['vinit'] = 0.0
 
 netParams.cellParams['artif_NetStim'] = {
         'cellModel': 'NetStim'}
@@ -18,7 +28,8 @@ netParams.cellParams['artif_NetStim'] = {
 ## Populations
 ##############
 netParams.popParams['MN_pop'] = {
-    'cellType': 'alphaMN',
+    'cellType': 'alphaMN_netpyne',
+    #'cellType': 'alphaMN_py',
     'numCells': cfg.numCells}
 
 # Artificial spike generators (NetStims)
