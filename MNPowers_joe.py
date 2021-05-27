@@ -19,7 +19,7 @@ def range_assignment(sec, var, valrange, locrange=[0.0, 1.0], verbose=True):
             print('    orig val:', getattr(seg, var))
         
         if seg.x >= locrange[0] and seg.x <= locrange[1]:
-            val = valrange[0] + seg.x * delta
+            val = valrange[0] + ((seg.x - locrange[0]) * delta)
             setattr(seg, var, val)
             
             if verbose:
