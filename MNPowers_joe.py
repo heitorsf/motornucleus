@@ -111,8 +111,8 @@ class FRMotoneuronNaHH(object):
         self.soma.gcamax_mAHP = 1.5e-5
         self.soma.insert('gh')
         self.soma.eca = 80
-        self.soma.theta_m_L_Ca = -40
-        self.soma.tau_m_L_Ca = 60
+        h.theta_m_L_Ca = -40
+        h.tau_m_L_Ca = 60
         
         self.axonhillock.insert('na3rp')
         self.axonhillock.insert('naps')
@@ -354,8 +354,8 @@ class FRMotoneuronNaHH(object):
         self.iseg.vslope_naps = 5
         self.axonhillock.vslope_naps = 5
 
-        self.soma.theta_m_L_Ca = -43
-        self.dend.theta_m_L_Ca = -43
+        h.theta_m_L_Ca = -43
+        h.theta_m_L_Ca = -43
 
         h.celsius = 37
 
