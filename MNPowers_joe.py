@@ -209,7 +209,7 @@ class FRMotoneuronNaHH(object):
         self.axonhillock.nseg = 7
 
         #self.axonhillock.diam(0:1) = 3.84444444444444:12.2222222222222
-        range_assignment(self.axonhillock, var='diam', locrange=[0,1], valrange=[3.84444444444444,12.2222222222222]
+        range_assignment(self.axonhillock, var='diam', locrange=[0,1], valrange=[3.84444444444444,12.2222222222222])
 
         self.axonhillock.g_pas = 0.001
         self.axonhillock.e_pas = -72
@@ -224,10 +224,13 @@ class FRMotoneuronNaHH(object):
         ## DENDRITE
         self.dend.nseg = 25
         self.dend.L = 6422.22222222222
-        self.dend.diam(0:0.2) = 39.4444444444444:41.4444444444444
-        range_assignment(self.dend, var='diam', locrange=[0,0.2], valrange[39.4444444444444,41.4444444444444]
-        self.dend.diam(0.2:1) = 41.4444444444444:0
-        range_assignment(self.dend, var='diam', locrange=[0.2,1], valrange[41.4444444444444,0]
+        
+        #self.dend.diam(0:0.2) = 39.4444444444444:41.4444444444444
+        range_assignment(self.dend, var='diam', locrange=[0,0.2], valrange[39.4444444444444,41.4444444444444])
+        
+        #self.dend.diam(0.2:1) = 41.4444444444444:0
+        range_assignment(self.dend, var='diam', locrange=[0.2,1], valrange[41.4444444444444,0])
+        
         self.dend.g_pas = 7.22222222222222e-05
         self.dend.e_pas = -72
         
