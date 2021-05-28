@@ -41,7 +41,7 @@ class FRMotoneuronNaHH(object):
         self.connectSections()
         self.setPassiveMN()
         self.setFRMotoneuronNaHH()
-        #self.setMediumTreshMN()
+        self.setMediumTreshMN()
         
 
     def connectSections(self):
@@ -304,55 +304,18 @@ class FRMotoneuronNaHH(object):
         self.dend.ghbar_gh = 0.000127777777777778
         self.dend.half_gh = -75
 
-        self.soma.tmin_kdrRL = 0.8
-        self.dend.tmin_kdrRL = 0.8
-        self.iseg.tmin_kdrRL = 0.8
-        self.axonhillock.tmin_kdrRL = 0.8
-
-        self.soma.taumax_kdrRL = 20
-        self.dend.taumax_kdrRL = 20
-        self.iseg.taumax_kdrRL = 20
-        self.axonhillock.taumax_kdrRL = 20
-
-        self.soma.qinf_na3rp = 4.8
-        self.dend.qinf_na3rp = 4.8
-        self.iseg.qinf_na3rp = 4.8
-        self.axonhillock.qinf_na3rp = 4.8
-
-        self.soma.thinf_na3rp = -50.5
-        self.dend.thinf_na3rp = -50.5
-        self.iseg.thinf_na3rp = -50.5
-        self.axonhillock.thinf_na3rp = -50.5
-
-        self.soma.Rd_na3rp = 0.06
-        self.dend.Rd_na3rp = 0.06
-        self.iseg.Rd_na3rp = 0.06
-        self.axonhillock.Rd_na3rp = 0.06
-
-        self.soma.qd_na3rp = 1.3
-        self.dend.qd_na3rp = 1.3
-        self.iseg.qd_na3rp = 1.3
-        self.axonhillock.qd_na3rp = 1.3
-
-        self.soma.qg_na3rp = 1.3
-        self.dend.qg_na3rp = 1.3
-        self.iseg.qg_na3rp = 1.3
-        self.axonhillock.qg_na3rp = 1.3
-
-        self.soma.thi1_na3rp = -35
-        self.dend.thi1_na3rp = -35
-        self.iseg.thi1_na3rp = -35
-        self.axonhillock.thi1_na3rp = -35
-
-        self.soma.thi2_na3rp = -35
-        self.dend.thi2_na3rp = -35
-        self.iseg.thi2_na3rp = -35
-        self.axonhillock.thi2_na3rp = -35
-
-        self.soma.vslope_naps = 5
-        self.dend.vslope_naps = 5
-        self.iseg.vslope_naps = 5
-        self.axonhillock.vslope_naps = 5
+        h.tmin_kdrRL = 0.8
+        h.taumax_kdrRL = 20
+        h.qinf_na3rp = 4.8
+        h.thinf_na3rp = -50.5
+        h.Rd_na3rp = 0.06
+        h.qd_na3rp = 1.3
+        h.qg_na3rp = 1.3
+        h.thi1_na3rp = -35
+        h.thi2_na3rp = -35
+        h.vslope_naps = 5
+        h.celsius = 37
+        h.theta_m_L_Ca = -43
 
         h.theta_m_L_Ca = -43
         h.theta_m_L_Ca = -43
