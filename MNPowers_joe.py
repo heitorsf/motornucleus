@@ -205,11 +205,11 @@ class FRMotoneuronNaHH(object):
         self.iseg.ar_naps = 0.4
         self.iseg.gMax_kdrRL = 0.4
 
-        ## AXON HILLOK
+        ## AXON HILLOCK
         self.axonhillock.nseg = 7
 
         #self.axonhillock.diam(0:1) = 3.84444444444444:12.2222222222222
-        range_assignment(self.axonhillock, var='diam', locrange=[0,1], valrange=[3.84444444444444,12.2222222222222])
+        range_assignment(self.axonhillock, var='diam', valrange=[3.84444444444444,12.2222222222222], locrange=[0,1])
 
         self.axonhillock.g_pas = 0.001
         self.axonhillock.e_pas = -72
@@ -226,79 +226,79 @@ class FRMotoneuronNaHH(object):
         self.dend.L = 6422.22222222222
         
         #self.dend.diam(0:0.2) = 39.4444444444444:41.4444444444444
-        range_assignment(self.dend, var='diam', locrange=[0,0.2], valrange[39.4444444444444,41.4444444444444])
+        range_assignment(self.dend, var='diam', valrange[39.4444444444444,41.4444444444444], locrange=[0,0.2])
         
         #self.dend.diam(0.2:1) = 41.4444444444444:0
-        range_assignment(self.dend, var='diam', locrange=[0.2,1], valrange[41.4444444444444,0])
+        range_assignment(self.dend, var='diam', valrange[41.4444444444444,0], locrange=[0.2,1])
         
         self.dend.g_pas = 7.22222222222222e-05
         self.dend.e_pas = -72
         
         #self.dend.gbar_na3rp(0:0.04) = 0.044:0.044
-        range_assignment(self.dend, var='gbar_na3rp', locrange=[0,0.04], valrange[0.044,0.044])
+        range_assignment(self.dend, var='gbar_na3rp', valrange[0.044,0.044], locrange=[0,0.04])
         
         #self.dend.gbar_na3rp(0.04:1) = 0.00075:0.00075
-        range_assignment(self.dend, var='gbar_na3rp', locrange=[0.04,1], valrange[0.00075,0.00075])
+        range_assignment(self.dend, var='gbar_na3rp', valrange[0.00075,0.00075], locrange=[0.04,1])
         
         #self.dend.gbar_naps(0:0.04) = 0.00044:0.00044
-        range_assignment(self.dend, var='gbar_naps', locrange=[0,0.04], valrange[0.00044,0.00044])
+        range_assignment(self.dend, var='gbar_naps', valrange[0.00044,0.00044], locrange=[0,0.04])
 
         #self.dend.gbar_naps(0.04:1) = 1.5e-05:1.5e-05
-        range_assignment(self.dend, var='gbar_naps', locrange=[0.04,1], valrange[1.5e-05,1.5e-05])
+        range_assignment(self.dend, var='gbar_naps', valrange[1.5e-05,1.5e-05], locrange=[0.04,1])
 
         self.dend.sh_na3rp = 5
         self.dend.sh_naps = 15
 
         #self.dend.ar_na3rp(0:0.04) = 0.4:0.4
-        range_assignment(self.dend, var='ar_na3rp', locrange=[0,0.04], valrange[0.4,0.4])
+        range_assignment(self.dend, var='ar_na3rp', valrange[0.4,0.4], locrange=[0,0.04])
 
         #self.dend.ar_naps(0:0.04) = 0.4:0.4
-        range_assignment(self.dend, var='ar_naps', locrange=[0,0.04], valrange[0.4,0.4])
+        range_assignment(self.dend, var='ar_naps', valrange[0.4,0.4], locrange=[0,0.04])
 
         #self.dend.ar_na3rp(0.04:1) = 0.4:0.4
-        range_assignment(self.dend, var='ar_na3rp', locrange=[0.04,1], valrange[0.4,0.4])
+        range_assignment(self.dend, var='ar_na3rp', valrange[0.4,0.4], locrange=[0.04,1])
 
         #self.dend.ar_naps(0.04:1) = 0.4:0.4
-        range_assignment(self.dend, var='ar_naps', locrange=[0.04,1], valrange[0.4,0.4])
+        range_assignment(self.dend, var='ar_naps', valrange[0.4,0.4], locrange=[0.04,1])
 
         #self.dend.gMax_kdrRL(0:0.04) = 0.08:0.08
-        range_assignment(self.dend, var='gMax_kdrRL', locrange=[0,0.04], valrange[0.08,0.08])
+        range_assignment(self.dend, var='gMax_kdrRL', valrange[0.08,0.08], locrange=[0,0.04])
 
         #self.dend.gMax_kdrRL(0.04:1) = 0.00033:0.00033
-        range_assignment(self.dend, var='gMax_kdrRL', locrange=[0.04,1], valrange[0.00033,0.00033])
+        range_assignment(self.dend, var='gMax_kdrRL', valrange[0.00033,0.00033], locrange=[0.04,1])
 
         #self.dend.gcabar_L_Ca(0:0.32) = 0:0
-        range_assignment(self.dend, var='gcabar_L_Ca', locrange=[0,0.32], valrange[0,0])
+        range_assignment(self.dend, var='gcabar_L_Ca', valrange[0,0], locrange=[0,0.32])
 
         #self.dend.gcabar_L_Ca(0.32:0.56) = 0.00016:0.00016
-        range_assignment(self.dend, var='gcabar_L_Ca', locrange=[0.32,0.56], valrange[0.00016,0.00016])
+        range_assignment(self.dend, var='gcabar_L_Ca', valrange[0.00016,0.00016], locrange=[0.32,0.56])
 
         #self.dend.gcabar_L_Ca(0.56:1) = 0:0
-        range_assignment(self.dend, var='gcabar_L_Ca', locrange=[0.56,1], valrange[0,0])
+        range_assignment(self.dend, var='gcabar_L_Ca', valrange[0,0], locrange=[0.56,1])
 
         #self.dend.g_kca2(0:0.32) = 0:0
-        range_assignment(self.dend, var='g_kca2', locrange=[0,0.32], valrange[0,0])
+        range_assignment(self.dend, var='g_kca2', valrange[0,0], locrange=[0,0.32])
 
         #self.dend.g_kca2(0.32:0.56) = 4e-05:4e-05
-        range_assignment(self.dend, var='g_kca2', locrange=[0.32,0.56], valrange[4e-05,4e-05])
+        range_assignment(self.dend, var='g_kca2', valrange[4e-05,4e-05], locrange=[0.32,0.56])
 
         #self.dend.g_kca2(0.56:1) = 0:0
-        range_assignment(self.dend, var='g_kca2', locrange=[0.56,1], valrange[0,0])
+        range_assignment(self.dend, var='g_kca2', valrange[0,0], locrange=[0.56,1])
 
         self.dend.depth2_kca2 = 200
         self.dend.taur2_kca2 = 120
 
         #self.dend.gcamax_mAHP(0:0.04) = 8e-06:8e-06
-        range_assignment(self.dend, var='gcamax_mAHP', locrange=[0,0.04], valrange[8e-06,8e-06])
+        range_assignment(self.dend, var='gcamax_mAHP', valrange[8e-06,8e-06], locrange=[0,0.04])
 
         #self.dend.gcamax_mAHP(0.04:1) = 0:0
-        range_assignment(self.dend, var='gcamax_mAHP', locrange=[0.04,1], valrange[0,0])
+        range_assignment(self.dend, var='gcamax_mAHP', valrange[0,0], locrange=[0.04,1])
 
         #self.dend.gkcamax_mAHP(0:0.04) = 0.0038:0.0038
-        range_assignment(self.dend, var='gkcamax_mAHP', locrange=[0,0.04], valrange[0.0038,0.0038])
+        range_assignment(self.dend, var='gkcamax_mAHP', valrange[0.0038,0.0038], locrange=[0,0.04])
 
         #self.dend.gkcamax_mAHP(0.04:1) = 0:0
-        range_assignment(self.dend, var='gkcamax_mAHP', locrange=[0.04,1], valrange[0,0])
+        range_assignment(self.dend, var='gkcamax_mAHP', valrange[0,0], locrange=[0.04,1])
 
         self.dend.taur_mAHP = 56.6666666666667
         self.dend.ghbar_gh = 0.000127777777777778
