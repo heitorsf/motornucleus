@@ -209,7 +209,7 @@ class FRMotoneuronNaHH(object):
         self.axonhillock.nseg = 7
 
         #self.axonhillock.diam(0:1) = 3.84444444444444:12.2222222222222
-        range_assignment(self.axonhillock, var='diam', valrange=[3.84444444444444,12.2222222222222], locrange=[0,1])
+        range_assignment(self.axonhillock, var='diam', valrange=[12.2222222222222,3.84444444444444], locrange=[0,1])
 
         self.axonhillock.g_pas = 0.001
         self.axonhillock.e_pas = -72
