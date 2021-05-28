@@ -1,6 +1,6 @@
 from neuron import h
 
-def range_assignment(sec, var, valrange, locrange=[0.0, 1.0], verbose=True):
+def range_assignment(sec, var, valrange, locrange=[0.0, 1.0], verbose=False):
     """
     linearly assign values between valrange[0] and valrange[1] to each segment between locrange[0] and locrange[1]
     """
