@@ -1,4 +1,4 @@
-from netpyne import specs
+from netpyne import specs, sim
 
 try:
     from __main__ import cfg  # for batches, import from the workspace

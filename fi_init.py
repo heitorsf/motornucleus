@@ -1,10 +1,7 @@
 from netpyne import sim
 
-from fi_cfg import cfg
-from fi_netParams import netParams
+# read cfg and netParams from command line arguments if available; otherwise use default
+simConfig, netParams = sim.readCmdLineArgs(simConfigDefault='fi_cfg.py', netParamsDefault='fi_netParams.py')
 
-simConfig = cfg
-sim.create(netParams=netParams, simConfig=cfg, output=False)
-
-sim.simulate()
-sim.analyze()
+# Create network and run simulation
+sim.createSimulateAnalyze(netParams=netParams, simConfig=simConfig)
