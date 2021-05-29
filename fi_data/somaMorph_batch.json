@@ -1,0 +1,36 @@
+{
+    "batch": {
+        "batchLabel": "somaMorph",
+        "cfgFile": "fi_cfg.py",
+        "evolCfg": {
+            "fitnessFunc": "removed"
+        },
+        "initCfg": {},
+        "method": "grid",
+        "netParamsFile": "fi_netParams.py",
+        "params": [
+            {
+                "label": "soma_morph_factor",
+                "values": [
+                    0.9,
+                    1.0,
+                    1.1
+                ]
+            },
+            {
+                "label": "IClamp_amp",
+                "values": [
+                    20.0,
+                    25.0
+                ]
+            }
+        ],
+        "runCfg": {
+            "script": "fi_init.py",
+            "skip": true,
+            "type": "mpi_bulletin"
+        },
+        "saveFolder": "fi_data",
+        "seed": null
+    }
+}
