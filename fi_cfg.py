@@ -11,7 +11,6 @@ cfg.recordStep = cfg.dt
 cfg.filename = 'fI'
 cfg.saveJson = True
 
-cfg.analysis['plotRaster'] = False
 cfg.analysis['plotTraces'] = {'include': [0], 'showFig': False}
 
 cfg.saveDataInclude = ['simData', 'simConfig', 'netParams', 'net']
