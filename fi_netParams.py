@@ -1,6 +1,9 @@
-from netpyne import sim, specs
+from netpyne import specs
 
-from fi_cfg import cfg
+try:
+    from __main__ import cfg  # for batches, import from the workspace
+except:
+    from fi_cfg import cfg  # for individual sims, import from file
 
 # Network parameters
 netParams = specs.NetParams()

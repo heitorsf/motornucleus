@@ -1,5 +1,4 @@
 from netpyne import specs
-import numpy as np
 
 cfg = specs.SimConfig()
 
