@@ -28,5 +28,5 @@ v = np.array(sim.simData['V_soma']['cell_0'])
 spkt = np.array(sim.simData['spkt'])
 isi = np.diff(spkt)
 ifreq = 1000./isi
-plt.figure();
+#plt.figure();
 plt.plot(ifreq) 
