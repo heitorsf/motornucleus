@@ -33,10 +33,11 @@ netParams.popParams['MN_pop'] = {
 ###################
 netParams.stimSourceParams['pulseCurrent'] = {
     'type': 'IClamp',
-    'dur': cfg.IClamp_amp,
+    'dur': 1e3,
+    'amp': cfg.IClamp_amp,
     'delay': 100}
 netParams.stimTargetParams['pulseCurrent->MN_pop'] = {
-    'source': 'rampCurrent',
+    'source': 'pulseCurrent',
     'conds': {'pop': 'MN_pop'},
     'sec': 'soma',
     'loc': 0.5}
