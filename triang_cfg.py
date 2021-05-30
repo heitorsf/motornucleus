@@ -2,13 +2,14 @@ from netpyne import specs
 
 cfg = specs.SimConfig()
 
-cfg.duration = 10.*1e3
+cfg.duration = 10.2*1e3
 cfg.dt = 0.025
-cfg.v_init = 0.0
-cfg.vinit = 0.0
+cfg.stimdelay = 100.  # ms
 cfg.verbose = False
 cfg.recordCells = ['all']
-cfg.recordTraces = {'V_soma': {'sec':'soma', 'loc': 0.5, 'var': 'v'}}
+cfg.recordTraces = {
+    'V_soma': {'sec':'soma', 'loc': 0.5, 'var': 'v'},
+    'V_dend': {'sec':'dend', 'loc': 0.5, 'var': 'v'}}
 cfg.recordStep = cfg.dt
 cfg.savePickle = False        # Save params, network and sim output to pickle file
 cfg.filename = 'model_output2'

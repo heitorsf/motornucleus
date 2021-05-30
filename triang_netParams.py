@@ -17,8 +17,6 @@ netParams.importCellParams(
         cellName = 'FRMotoneuronNaHH',
         importSynMechs = False)
 soma_diam = netParams.cellParams['PowersEtAl2012']['secs']['soma']['geom']['diam']
-netParams.cellParams['PowersEtAl2012']['secs']['soma']['geom']['diam'] = soma_diam*1.1
-netParams.cellParams['PowersEtAl2012']['secs']['soma']['geom']['L'] = soma_diam*1.1
 
 ##############
 ## Populations
