@@ -580,3 +580,54 @@ def plot_vtraces_multicell(dataFolder, batchLabel, cellIDs=None, secs=None, para
                     fig.savefig(os.path.join(outputdir, batchLabel + "_" + "_multicell_vtrace_" + filename + ".png"))
                 else:
                     fig.savefig(os.path.join(outputdir, batchLabel + "_" + "_multicell_vtrace_" + filename + "_swapaxes.png"))
+
+def plot_fi(dataFolder, batchLabel, cellIDs=None, secs=None, param_labels=None, celllabel=None, title=None, filename=None, save=True, outputdir="batch_figs", swapaxes=False):
+    """For use with 2D batches where one of them is 'IClamp_amp'
+    
+    Draw the frequency-current (f-I) relationship.
+    Must have a single cell in the net."""
+
+    params, data = readBatchData(dataFolder, batchLabel, loadAll=False, saveAll=True, vars=None, maxCombs=None, listCombs=None)
+    
+    # Get the current (I) values
+    for param in params:
+        if param['label'] == 'IClamp_amp':
+            I = np.array(param['values'])
+        else:
+            pass
+    
+    # Estimates the instantaneous frequency of each run
+    for key in data.keys():
+        spkt = np.array(data[key]['simData']['spkt'])
+        isi = np.diff(spkt[5:])
+        ifreq = np.mean(1000./isi)
+        data[key]['simData']['ifreq'] = ifreq
+    
+    # number of different cases to draw the f-I
+    ncasesfi = int(len(data.keys()) / len(I))
+
+    ifreq2D = []
+    for c, casefi in enumerate(range(ncasesfi)):
+        keyrad = '_'+str(int(c))+'_'  # '_0_'
+        ifreq_1D = []        
+        for i, curr in enumerate(I):
+            key = keyrad + str(int(i))  # '_0_0'
+            ifreq = np.array(data[key]['simData']['ifreq'])
+            ifreq_1D.append(ifreq)
+        ifreq2D.append(ifreq_1D)        
+    
+    plt.ion()
+    fig, ax = plt.subplots()
+    ax.set_xlabel("Current (nA)")
+    ax.set_ylabel("Frequency (Hz)")
+    for i, ifreq1D in enumerate(ifreq2D):
+        ax.plot(I, ifreq1D, label=params[0]['label']+': '+str(i))
+    ax.legend()
+    
+    if save:
+        if not os.path.isdir(outputdir):
+            os.mkdir(outputdir)
+        if filename is None:
+            fig.savefig(os.path.join(outputdir, batchLabel + "_fi.png"))
+        else:
+            fig.savefig(os.path.join(outputdir, batchLabel + "_fi_" + filename + ".png"))
