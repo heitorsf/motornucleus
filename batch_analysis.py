@@ -621,7 +621,7 @@ def plot_fi(dataFolder, batchLabel, cellIDs=None, secs=None, param_labels=None, 
     ax.set_xlabel("Current (nA)")
     ax.set_ylabel("Frequency (Hz)")
     for i, ifreq1D in enumerate(ifreq2D):
-        ax.plot(I, ifreq1D, label=params[0]['label']+': '+str(i))
+        ax.plot(I, ifreq1D, label=params[0]['values']+': '+str(i))
     ax.legend()
     
     if save:
