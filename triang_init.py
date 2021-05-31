@@ -89,4 +89,4 @@ ax[3].set_xlabel("Injected Current (nA)")
 fig.tight_layout()
 if not os.path.isdir(figdir):
     os.mkdir(figdir)
-plt.savefig(os.path.join(figdir,"MedFR_fI_analysis.png"))
+plt.savefig(os.path.join(figdir,"MN_fI_analysis.png"))

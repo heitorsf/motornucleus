@@ -6,8 +6,8 @@ from syn_netParams import netParams
 
 sim.create(netParams=netParams, simConfig=cfg, output=False)
 
-rate_min = 200.
-rate_max = 2000.
+rate_min = 100.
+rate_max = 3000.
 
 ramp_half_dur = (cfg.duration/2.)/cfg.dt
 ramp_up = np.linspace(rate_min, rate_max, int(ramp_half_dur))

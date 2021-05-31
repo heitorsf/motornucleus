@@ -11,7 +11,7 @@ netParams = specs.NetParams()
 netParams.cellParams['artif_NetStim'] = {
         'cellModel': 'NetStim'}
 
-netParams.defaultThreshold = -10.0
+netParams.defaultThreshold = -15.0
 
 netParams.importCellParams(
         label='PowersEtAl2012',
@@ -32,7 +32,7 @@ netParams.popParams['descDrive'] = {
         'cellType': 'artif_NetStim',
         'numCells': cfg.numNetStim,
         'rate': 30,  # Hz
-        'noise': 0.5,
+        'noise': 1. ,  #0.5,
         'yRange': [0,100]}
 
 ######################
