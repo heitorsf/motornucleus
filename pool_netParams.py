@@ -11,7 +11,7 @@ netParams = specs.NetParams()
 netParams.cellParams['artif_NetStim'] = {
         'cellModel': 'NetStim'}
 
-netParams.defaultThreshold = -10.0
+netParams.defaultThreshold = -15.0
 
 netParams.importCellParams(
         label='PowersEtAl2012',
@@ -30,9 +30,9 @@ netParams.popParams['MN_pop'] = {
 # Artificial spike generators (NetStims)
 netParams.popParams['descDrive'] = {
         'cellType': 'artif_NetStim',
-        'numCells': 400,
+        'numCells': cfg.numNetStim,
         'rate': cfg.descDrive_rate,  # Hz
-        'noise': 0.5,
+        'noise': 0.8,
         'yRange': [0,100]}
 
 ######################
@@ -51,9 +51,9 @@ netParams.connParams['descDrive->motorNucleus'] = {     #label
         'preConds': {'pop': 'descDrive'},
         'postConds': {'pop': 'MN_pop'},
         'sec': 'dend',              # postsyn section
-        'loc': 0.5,                 # postsyn section location
+        'loc': "uniform(0.1,0.9)", #0.5,                 # postsyn section location
         #'connFunc': 'fullConn',
-  		'probability': 0.3,
+  		'probability': cfg.connProb,
         'weight': 0.5,      # synaptic weight (gmax for Exp2Syn)
         'delay': 1,        # transmission delay(ms) = 1 ms (1 synpase)
         'synMech': 'exc'}           # synaptic mechanism
